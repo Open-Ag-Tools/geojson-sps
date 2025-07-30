@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "https://your-org.github.io/geojson-sps/schema.json",
+  "title": "Extended GeoJSON with structuredPropertiesSchema (GeoJSON-SPS)",
+  "description": "Schema version 0.01 of GeoJSON-SPS for structuredPropertiesSchema.",
+  "version": "0.01",
+  "type": "object",
+  "required": ["type", "features", "structuredPropertiesSchema"],
+  "properties": {
+    "type": {
+      "const": "FeatureCollection"
+    },
+    "structuredPropertiesSchema": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "index"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the property."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["string", "number", "boolean"],
+            "description": "The value type of the property."
+          },
+          "unit": {
+            "type": ["string", "null"],
+            "description": "Optional unit of measurement."
+          },
+          "standard_ref": {
+            "type": "string",
+            "enum": ["ISO19115", "INSPIRE", "USDA-NASS", "CF-Standard-Name", "EPSG", "None"],
+            "description": "Name of the standards registry for the standard_code."
+          },
+          "standard_code": {
+            "type": ["string", "null"],
+            "description": "Code or identifier in the referenced standards registry."
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Index position in the structuredProperties array."
+          }
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "geometry", "properties"],
+        "properties": {
+          "type": {
+            "const": "Feature"
+          },
+          "geometry": {
+            "$ref": "https://geojson.org/schema/Feature.json#/properties/geometry"
+          },
+          "properties": {
+            "type": "object",
+            "required": ["structuredProperties"],
+            "properties": {
+              "structuredProperties": {
+                "type": "array",
+                "items": { "type": ["string", "number", "boolean", "null"] },
+                "description": "Ordered property values as defined in the structuredPropertiesSchema."
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

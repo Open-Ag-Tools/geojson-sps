@@ -1,0 +1,59 @@
+{
+  "type": "FeatureCollection",
+  "structuredPropertiesSchema": [
+    {
+      "name": "ndvi",
+      "type": "number",
+      "unit": "unitless",
+      "standard_ref": "CF-Standard-Name",
+      "standard_code": "NDVI",
+      "index": 0
+    },
+    {
+      "name": "crop_type",
+      "type": "string",
+      "unit": null,
+      "standard_ref": "USDA-NASS",
+      "standard_code": "111",
+      "index": 1
+    }
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-90.0, 40.0],
+            [-90.0, 40.1],
+            [-89.9, 40.1],
+            [-89.9, 40.0],
+            [-90.0, 40.0]
+          ]
+        ]
+      },
+      "properties": {
+        "structuredProperties": [0.75, "corn"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-90.1, 40.0],
+            [-90.1, 40.1],
+            [-90.0, 40.1],
+            [-90.0, 40.0],
+            [-90.1, 40.0]
+          ]
+        ]
+      },
+      "properties": {
+        "structuredProperties": [0.62, "soybeans"]
+      }
+    }
+  ]
+}
