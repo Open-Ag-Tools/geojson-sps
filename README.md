@@ -13,5 +13,56 @@ values (`structuredProperties`).
 - Uses `structuredPropertiesSchema` to define property structure and metadata
 - Uses `structuredProperties` array in each feature for compact values
 
+
+## Example
+```
+{
+  "type": "FeatureCollection",
+  "structuredPropertiesSchema": [
+    {
+      "name": "P",
+      "type": "number",
+      "unit": "ppm",
+      "standard_ref": "MODUS",
+      "standard_code": "S-P-M3.19",
+      "index": 0
+    },
+    {
+      "name": "yield",
+      "type": "number",
+      "unit": "bu/ac",
+      "standard_ref": null,
+      "standard_code": null,
+      "index": 1
+    }
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": 
+          [-90.0, 40.0]
+      },
+      "properties": {
+        "structuredProperties": [150, 200]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": 
+            [-90.1, 40.1]
+        ]
+      },
+      "properties": {
+        "structuredProperties": [125, 225]
+      }
+    }
+  ]
+}
+```
+
 ## License
 MIT
