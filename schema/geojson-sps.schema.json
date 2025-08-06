@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft/2020-12/schema",
-  "$id": "https://your-org.github.io/geojson-sps/schema.json",
+  "$id": "https://github.com/Open-Ag-Tools/geojson-sps/blob/main/schema/geojson-sps.schema.json",
   "title": "Extended GeoJSON with structuredPropertiesSchema (GeoJSON-SPS)",
   "description": "Schema version 0.01 of GeoJSON-SPS for structuredPropertiesSchema.",
   "version": "0.01",
