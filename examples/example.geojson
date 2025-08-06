@@ -1,20 +1,30 @@
 {
   "type": "FeatureCollection",
+  "metadata": {
+    "file_type": "harvest",
+    "crop": "corn",
+    "harvest_date": "2024-10-01", 
+    "data_source": "JD Combine 12345",
+    "created_by": "FarmOps",
+    "created_at": "2024-10-02T10:00:00Z", 
+    "field_name": "North 40",
+    "notes": "Moisture sensor slightly out of calibration"
+  },
   "structuredPropertiesSchema": [
     {
-      "name": "ndvi",
+      "name": "yield",
       "type": "number",
-      "unit": "unitless",
-      "standard_ref": "CF-Standard-Name",
-      "standard_code": "NDVI",
+      "unit": "bushels/acre",
+      "standard_ref": "USDA-NASS",
+      "standard_code": "YIELD",
       "index": 0
     },
     {
-      "name": "crop_type",
-      "type": "string",
-      "unit": null,
-      "standard_ref": "USDA-NASS",
-      "standard_code": "111",
+      "name": "moisture_content",
+      "type": "number",
+      "unit": "%",
+      "standard_ref": "AgGateway",
+      "standard_code": "MOISTURE",
       "index": 1
     }
   ],
@@ -34,25 +44,7 @@
         ]
       },
       "properties": {
-        "structuredProperties": [0.75, "corn"]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [-90.1, 40.0],
-            [-90.1, 40.1],
-            [-90.0, 40.1],
-            [-90.0, 40.0],
-            [-90.1, 40.0]
-          ]
-        ]
-      },
-      "properties": {
-        "structuredProperties": [0.62, "soybeans"]
+        "structuredProperties": [180.5, 12.1]
       }
     }
   ]
